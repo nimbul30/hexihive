@@ -2,28 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      as="style"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700"
-      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap"
       rel="stylesheet"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
-    <title>HexiHive - Post</title>
+    <title>HexiHive - The Future of Decentralized Social Media</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <style type="text/tailwindcss">
       :root {
-        --primary-color: #38e07b;
-        --secondary-color: #1a3a24;
+        --amber-gold: #ffbf00;
+        --dark-charcoal: #1a1a1a;
+        --secondary-color: #2a2a2a;
         --text-primary: #ffffff;
-        --text-secondary: #96c5a9;
-        --background-color: #122118;
-        --border-color: #264532;
+        --text-secondary: #a0aec0;
+        --border-color: #4a4a4a;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
       }
       .honeycomb {
         clip-path: polygon(
@@ -37,37 +39,42 @@
       }
     </style>
   </head>
-  <body
-    class="bg-background-color text-primary"
-    style="font-family: 'Spline Sans', 'Noto Sans', sans-serif"
-  >
+  <body class="bg-dark-charcoal text-text-primary">
     <div class="relative flex min-h-screen flex-col overflow-x-hidden">
       <header
-        class="sticky top-0 z-20 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-color bg-background-color/80 px-10 py-3 backdrop-blur-sm"
+        class="sticky top-0 z-20 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-color bg-dark-charcoal/80 px-10 py-3 backdrop-blur-sm"
       >
         <div class="flex items-center gap-4">
-          <div class="size-8 text-[var(--primary-color)]">
-            <svg
-              fill="none"
-              viewBox="0 0 48 48"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"
-                fill="currentColor"
-              ></path>
-            </svg>
-          </div>
-          <h1 class="text-xl font-bold tracking-tight">HexiHive</h1>
+          <a href="comb.html" class="flex items-center gap-4">
+            <div class="size-8 text-amber-gold">
+              <svg
+                fill="none"
+                height="28"
+                viewBox="0 0 24 28"
+                width="28"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M23.25 7V21L12 28L0.75 21V7L12 0L23.25 7Z"
+                  fill="#FBBF24"
+                ></path>
+                <path
+                  d="M12 14L5.25 10.0625V17.9375L12 21.875L18.75 17.9375V10.0625L12 14Z"
+                  fill="#111111"
+                ></path>
+              </svg>
+            </div>
+            <h1 class="text-xl font-bold tracking-tight">HexiHive</h1>
+          </a>
         </div>
         <div class="flex flex-1 items-center justify-end gap-4">
           <label class="relative hidden lg:block w-64">
             <span
-              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary"
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary"
               >search</span
             >
             <input
-              class="form-input w-full rounded-full border-none bg-secondary-color py-2 pl-10 pr-4 text-primary placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+              class="form-input w-full rounded-full border-none bg-secondary-color py-2 pl-10 pr-4 text-text-primary placeholder:text-text-secondary focus:outline-none focus:ring-2 focus:ring-amber-gold"
               placeholder="Search HexiHive"
               type="search"
             />
@@ -79,12 +86,13 @@
               >3</span
             >
           </button>
-          <div
+          <a href="userdash.html"
             class="size-10 rounded-full bg-cover bg-center"
             style="
               background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuApMtYTuLkK3rbK78e8IhPtq2lu6rU87JS9upd8vm1VecJCnRjOPBwVPrEpWNBmmD9ZtrsUCGq6MUWqfoHtHpexI0EBCst35-i1E7zGVNjAOsSj18-l6bBkkOYDG0UwiuBqRlhvtTuEnMPcGSff_MK1kg0KIT8vVBbGFETwuqN5co1hJttWyP1crKhLyuUrnpUfJDd9GQMpT9_R8SOBbn-DYeAJn0IRdMduT2EUl05YuRJ-eiiNr5VPfzLtA6sHhDtyyHICohHVXR4');
             "
-          ></div>
+          ></a
+          >
         </div>
       </header>
       <main class="flex flex-1 justify-center px-4 py-8 sm:px-6 lg:px-8">
@@ -92,12 +100,12 @@
           <div class="mb-8 px-4">
             <nav class="text-sm">
               <a
-                class="text-secondary hover:text-[var(--primary-color)]"
-                href="#"
+                class="text-text-secondary hover:text-amber-gold"
+                href="comb.html"
                 >Home</a
               >
-              <span class="mx-2 text-secondary">/</span>
-              <span class="text-primary">Post</span>
+              <span class="mx-2 text-text-secondary">/</span>
+              <span class="text-text-primary">Post</span>
             </nav>
           </div>
           <article
@@ -105,16 +113,20 @@
           >
             <header>
               <h2
-                class="text-3xl font-bold leading-tight tracking-tight text-primary md:text-4xl"
+                class="text-3xl font-bold leading-tight tracking-tight text-text-primary md:text-4xl"
               >
                 The Future of Decentralized Social Media
               </h2>
-              <p class="mt-2 text-sm text-secondary">
-                Posted by Alex Rivera · 2d ago
+              <p class="mt-2 text-sm text-text-secondary">
+                Posted by
+                <a href="userdash.html" class="hover:underline"
+                  >Alex Rivera</a
+                >
+                · 2d ago
               </p>
             </header>
             <div
-              class="prose prose-invert max-w-none text-base text-primary/90"
+              class="prose prose-invert max-w-none text-base text-text-primary/90"
             >
               <p>
                 Decentralized social media platforms are revolutionizing how we
@@ -131,45 +143,45 @@
             </div>
           </article>
           <div class="my-6 flex items-center justify-start gap-4 px-4">
-            <div class="flex items-center gap-2 text-secondary">
+            <div class="flex items-center gap-2 text-text-secondary">
               <span class="material-symbols-outlined">favorite_border</span>
               <span class="text-sm font-semibold">234</span>
             </div>
-            <div class="flex items-center gap-2 text-secondary">
+            <div class="flex items-center gap-2 text-text-secondary">
               <span class="material-symbols-outlined">chat_bubble_outline</span>
               <span class="text-sm font-semibold">56</span>
             </div>
-            <div class="flex items-center gap-2 text-secondary">
+            <div class="flex items-center gap-2 text-text-secondary">
               <span class="material-symbols-outlined">send</span>
               <span class="text-sm font-semibold">12</span>
             </div>
           </div>
           <aside
-            class="sticky bottom-0 z-10 w-full bg-background-color/80 p-4 backdrop-blur-sm"
+            class="sticky bottom-0 z-10 w-full bg-dark-charcoal/80 p-4 backdrop-blur-sm"
           >
             <div
               class="mx-auto flex max-w-md justify-around rounded-full bg-secondary-color p-2"
             >
               <button
-                class="flex flex-col items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-primary hover:bg-[var(--primary-color)] hover:text-background-color"
+                class="flex flex-col items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-text-primary hover:bg-amber-gold hover:text-dark-charcoal"
               >
                 <span class="material-symbols-outlined">thumb_up</span>
                 <span>Support</span>
               </button>
               <button
-                class="flex flex-col items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-primary hover:bg-[var(--primary-color)] hover:text-background-color"
+                class="flex flex-col items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-text-primary hover:bg-amber-gold hover:text-dark-charcoal"
               >
                 <span class="material-symbols-outlined">flag</span>
                 <span>Challenge</span>
               </button>
               <button
-                class="flex flex-col items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-primary hover:bg-[var(--primary-color)] hover:text-background-color"
+                class="flex flex-col items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-text-primary hover:bg-amber-gold hover:text-dark-charcoal"
               >
                 <span class="material-symbols-outlined">paid</span>
                 <span>Tip Creator</span>
               </button>
               <button
-                class="flex flex-col items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-primary hover:bg-[var(--primary-color)] hover:text-background-color"
+                class="flex flex-col items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-text-primary hover:bg-amber-gold hover:text-dark-charcoal"
               >
                 <span class="material-symbols-outlined">share</span>
                 <span>Share</span>
@@ -185,17 +197,17 @@
                 <div
                   class="flex flex-col gap-2 rounded-xl border border-border-color bg-secondary-color/30 p-6"
                 >
-                  <p class="text-base font-medium text-secondary">
+                  <p class="text-base font-medium text-text-secondary">
                     Verification Status
                   </p>
-                  <p class="text-3xl font-bold text-[var(--primary-color)]">
+                  <p class="text-3xl font-bold text-amber-gold">
                     Verified
                   </p>
                 </div>
                 <div
                   class="flex flex-col gap-2 rounded-xl border border-border-color bg-secondary-color/30 p-6"
                 >
-                  <p class="text-base font-medium text-secondary">
+                  <p class="text-base font-medium text-text-secondary">
                     Staked $HNY
                   </p>
                   <div class="flex items-center gap-2">

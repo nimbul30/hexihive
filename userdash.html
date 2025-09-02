@@ -2,33 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      as="style"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700"
-      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap"
       rel="stylesheet"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
-    <title>Stitch Design</title>
+    <title>HexiHive - User Dashboard</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <style type="text/tailwindcss">
       :root {
-        --primary-50: #f0fdf6;
-        --primary-100: #dffcee;
-        --primary-200: #bbf6db;
-        --primary-300: #86f0be;
-        --primary-400: #4ae59b;
-        --primary-500: #20d579;
-        --primary-600: #15b864;
-        --primary-700: #149252;
-        --primary-800: #157244;
-        --primary-900: #145b3a;
-        --primary-950: #0a3120;
+        --amber-gold: #ffbf00;
+        --dark-charcoal: #1a1a1a;
+        --secondary-bg: #2a2a2a;
+        --border-color: #4a4a4a;
+        --text-primary: #ffffff;
+        --text-secondary: #a0aec0;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
       }
       .hexagon {
         clip-path: polygon(
@@ -42,42 +39,30 @@
       }
     </style>
   </head>
-  <body
-    class="bg-[#101312] dark"
-    style="font-family: 'Spline Sans', 'Noto Sans', sans-serif"
-  >
-    <div
-      class="relative flex size-full min-h-screen flex-col overflow-x-hidden"
-    >
-      <header
-        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-primary-900 px-10 py-3"
+  <body class="bg-dark-charcoal dark">
+    <div class="max-w-7xl mx-auto">
+      <div
+        class="relative flex size-full min-h-screen flex-col overflow-x-hidden"
       >
+        <header
+          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-color px-10 py-3"
+        >
         <div class="flex items-center gap-8">
-          <a class="flex items-center gap-2 text-white" href="#">
+          <a class="flex items-center gap-2 text-white" href="comb.html">
             <svg
-              class="text-primary-500"
               fill="none"
-              height="24"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              width="24"
+              height="28"
+              viewBox="0 0 24 28"
+              width="28"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M13.2 9.5 8.8 4.3"></path>
-              <path d="M13.2 9.5 8.8 4.3"></path>
-              <path d="m13.2 14.7-4.4 5.2"></path>
-              <path d="M8.8 19.9 4.4 14.7"></path>
-              <path d="m19.6 9.5-4.4-5.2"></path>
-              <path d="M15.2 4.3 19.6 9.5"></path>
-              <path d="M14 9.5a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0Z"></path>
               <path
-                d="M9.2 14.7a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0Z"
+                d="M23.25 7V21L12 28L0.75 21V7L12 0L23.25 7Z"
+                fill="#FBBF24"
               ></path>
               <path
-                d="M18.8 14.7a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0Z"
+                d="M12 14L5.25 10.0625V17.9375L12 21.875L18.75 17.9375V10.0625L12 14Z"
+                fill="#111111"
               ></path>
             </svg>
             <h1 class="text-lg font-bold">HexiHive</h1>
@@ -85,12 +70,12 @@
           <nav class="flex items-center gap-9">
             <a
               class="text-white/80 hover:text-white text-sm font-medium transition-colors"
-              href="#"
+              href="comb.html"
               >Home</a
             >
             <a
               class="text-white/80 hover:text-white text-sm font-medium transition-colors"
-              href="#"
+              href="news.html"
               >Explore</a
             >
             <a
@@ -100,40 +85,49 @@
             >
           </nav>
         </div>
-        <div class="flex flex-1 justify-end gap-4">
-          <label class="flex w-full max-w-xs items-stretch">
-            <div
-              class="flex w-full items-stretch rounded-full bg-primary-950/50"
-            >
-              <div class="flex items-center justify-center pl-4">
-                <span class="material-symbols-outlined text-white/60">
-                  search
-                </span>
-              </div>
-              <input
-                class="form-input w-full flex-1 resize-none overflow-hidden bg-transparent text-white placeholder:text-white/60 focus:outline-none focus:ring-0 border-none px-4 py-2.5 text-sm"
-                placeholder="Search HexiHive"
-                value=""
-              />
-            </div>
-          </label>
+        <div class="flex items-center gap-4">
           <button
-            class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-primary-950/50 text-white transition-colors hover:bg-primary-950"
+            class="rounded-full p-2 text-gray-300 hover:bg-[#2a2a2a] hover:text-white transition-colors"
           >
-            <span class="material-symbols-outlined"> notifications </span>
+            <svg
+              fill="currentColor"
+              height="20px"
+              viewBox="0 0 256 256"
+              width="20px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+              ></path>
+            </svg>
           </button>
-          <div class="flex items-center">
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-              style="
-                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8bQy_D6wdCaHl-kTvYyvDYUm-DrvqGOZTE7peZabyF7ewY400holqyzSIN-tSKVzGlzBopemU32sidKLreK_yQiVR8sQ0FriWuw5fKlrfGSUx4Q4XAtThsoWQjlPlOP7TnDUwqTSC9AXaY2yvnNNk59HB_BPU1295AlXYHpHn9rp66TyQbQ02UmSLsDQQiIo3OSaOhC9nlIiaW6VCCv5Uun_PKxSTAwEr6LuOLiWR_1Fwvy-0fylgCRmMG78Uzjp7J5YC-YIjJlM');
-              "
-            ></div>
-          </div>
+          <button
+            class="hidden md:flex items-center gap-2 rounded-full bg-amber-gold px-4 py-2 text-sm font-bold text-dark-charcoal transition-opacity hover:opacity-90"
+          >
+            <span>Create</span>
+            <svg
+              fill="currentColor"
+              height="16px"
+              viewBox="0 0 256 256"
+              width="16px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"
+              ></path>
+            </svg>
+          </button>
+          <a href="userdash.html"
+            class="size-10 rounded-full bg-cover bg-center"
+            style="
+              background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdGVpB80pEKD59sJZoC9EM21wbMbkeVL5rgM8Mt4NC7sId5e7Db5kQ88_48bSnVizYpJpF8UW0lZxwEaPHWwIvYtw5jmywAjjobokPMf3hztH58Jy2baidWRHEudeTMFgSrnCpclsW38geAky54IF-KCOJONazZxgfN9DEj3ItR7DlX9i6r8sVKaUNRK76xPBKERFafDfZfxegm8203TBsayIaK0y7Us-wQgNkrgTXODDSFz5lvCtKFb3eO84OjG03U6s4sCGEGaA');
+            "
+          ></a
+          >
         </div>
       </header>
-      <main class="flex flex-1 justify-center py-10 px-4 sm:px-6 lg:px-8">
-        <div class="w-full max-w-4xl">
+      <main class="flex-1">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
           <div
             class="flex flex-col items-center gap-6 p-4 md:flex-row md:items-start"
           >
@@ -150,9 +144,9 @@
               <p class="text-white/60">@alex_creator</p>
               <p class="font-mono text-sm text-white/60">Wallet: 0x123...456</p>
               <div
-                class="mt-4 flex items-center gap-2 rounded-full bg-primary-900/50 px-4 py-2"
+                class="mt-4 flex items-center gap-2 rounded-full bg-secondary-bg px-4 py-2"
               >
-                <span class="text-primary-400">
+                <span class="text-amber-gold">
                   <svg
                     fill="none"
                     height="24"
@@ -177,23 +171,23 @@
                       d="M9.2 14.7a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0Z"
                     ></path>
                     <path
-                      d="M18.8 14.7a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0Z"
+                      d="M18.8 14.7a2.4 2.4 0 1 1-4.8 0 2.4 2.4 S0 0 1 4.8 0Z"
                     ></path>
                   </svg>
                 </span>
                 <p class="text-sm font-semibold text-white">
                   Credibility Score (Hive Rank):
                 </p>
-                <p class="text-lg font-bold text-primary-400">85</p>
+                <p class="text-lg font-bold text-amber-gold">85</p>
               </div>
             </div>
           </div>
           <div class="mt-8">
-            <div class="border-b border-primary-900">
+            <div class="border-b border-border-color">
               <nav aria-label="Tabs" class="-mb-px flex space-x-8 px-4">
                 <button
                   aria-current="page"
-                  class="whitespace-nowrap border-b-2 border-primary-500 px-1 py-4 text-sm font-medium text-primary-500"
+                  class="whitespace-nowrap border-b-2 border-amber-gold px-1 py-4 text-sm font-medium text-amber-gold"
                 >
                   My Comb
                 </button>
@@ -213,14 +207,17 @@
               <div
                 class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
               >
-                <div class="group relative aspect-square">
+                <a
+                  href="insidehexi.html"
+                  class="group relative aspect-square"
+                >
                   <div
                     class="hexagon size-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
                     style="
                       background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDueVWbY5jvrPXLlHl1Tfb9CrXR5uA9oH5DNGfci7Jh4wCRynSt7Q841VDuxhpVaKwCL5Pk9Rsoqcx1YSb17idWaQ7zL1NBHpR6QME3nBiEQ_Ci98dX0pbQS-AtFHQNCn9Z57-FFwE9cD3tKn_g-Xgv9870E-joDPlnx6NoTVLbF_ANaT-UH86NnHPjtE6zLFTT9QZWcU7pSUSwaYEaa_WtFLdbalcP2i8G3hSKY7iDmgYewyh8L82hyypWo4kRV40M0yYvQJxSks');
                     "
                   ></div>
-                </div>
+                </a>
                 <div class="group relative aspect-square">
                   <div
                     class="hexagon size-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
