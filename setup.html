@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <title>HexiHive - Profile Setup</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --primary-color: #f59e0b;
+        --dark-bg: #12181b;
+        --secondary-bg: #1a202c;
+        --border-color: #2d3748;
+        --text-primary: #ffffff;
+        --text-secondary: #a0aec0;
+      }
+      .hexagon {
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[var(--dark-bg)]"
+    style="font-family: 'Spline Sans', 'Noto Sans', sans-serif"
+  >
+    <div
+      class="relative flex size-full min-h-screen flex-col text-[var(--text-primary)] group/design-root overflow-x-hidden"
+    >
+      <header
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-10 py-4"
+      >
+        <div class="flex items-center gap-3">
+          <svg
+            fill="none"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 2L2 7V17L12 22L22 17V7L12 2Z"
+              stroke="var(--primary-color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            ></path>
+            <path
+              d="M2 7L12 12L22 7"
+              stroke="var(--primary-color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            ></path>
+            <path
+              d="M12 22V12"
+              stroke="var(--primary-color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            ></path>
+            <path
+              d="M17 4.5L7 9.5"
+              stroke="var(--primary-color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-opacity="0.5"
+              stroke-width="1.5"
+            ></path>
+            <path
+              d="M7 14.5L17 19.5"
+              stroke="var(--primary-color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-opacity="0.5"
+              stroke-width="1.5"
+            ></path>
+          </svg>
+          <h1
+            class="text-xl font-bold tracking-tight text-[var(--primary-color)]"
+          >
+            HexiHive
+          </h1>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            class="text-sm font-medium hover:text-[var(--primary-color)] transition-colors"
+            href="#"
+            >Home</a
+          >
+          <a
+            class="text-sm font-medium hover:text-[var(--primary-color)] transition-colors"
+            href="#"
+            >Explore</a
+          >
+          <a
+            class="text-sm font-medium hover:text-[var(--primary-color)] transition-colors"
+            href="#"
+            >Notifications</a
+          >
+          <a
+            class="text-sm font-medium hover:text-[var(--primary-color)] transition-colors"
+            href="#"
+            >Messages</a
+          >
+        </nav>
+        <div class="flex items-center gap-4">
+          <button
+            class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+          >
+            <span class="material-symbols-outlined">search</span>
+          </button>
+          <button
+            class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+          >
+            <span class="material-symbols-outlined">help</span>
+          </button>
+          <div
+            class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-[var(--border-color)]"
+            style="
+              background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsN53x1ZQKv7mfGsE38qkQCs3eEzVBZPKsuLjOn8KU2fltW7VWfDOHXLEN4f9Grgs9RDLTrOvtvSHj0f6EJ4ZOuF9rXzUDlGokU2UftwcanhLu0TXKT9LKMEDx_qHPWNCSZ55KW-9xa2d9zuxNtUkTknXR8mbbwY3M-8pyWjpUjyg4G9A744-2T5nAP7bsvRiOPFNiqAqg3VewbTaGTAlhJ7BIIKg4tukEuMON2HMhS0sC4JwwvNU32BI2UBChLGvZv8nICqwpz8A');
+            "
+          ></div>
+        </div>
+      </header>
+      <main class="flex flex-1 justify-center items-center py-12 px-4">
+        <div
+          class="bg-[var(--secondary-bg)] rounded-2xl shadow-2xl p-8 md:p-12 w-full max-w-2xl space-y-8"
+        >
+          <div class="text-center">
+            <h2
+              class="text-4xl font-bold tracking-tighter text-[var(--primary-color)]"
+            >
+              Setup Your Hive
+            </h2>
+            <p class="text-[var(--text-secondary)] mt-2">
+              Connect your wallet and create your unique profile to join the
+              swarm.
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <button
+              class="w-full max-w-sm flex items-center justify-center gap-3 h-12 px-6 bg-[var(--primary-color)] text-[var(--dark-bg)] rounded-full font-bold text-lg hover:opacity-90 transition-opacity"
+            >
+              <span class="material-symbols-outlined"
+                >account_balance_wallet</span
+              >
+              <span>Connect Wallet</span>
+            </button>
+            <p class="text-xs text-[var(--text-secondary)] mt-2">
+              We support MetaMask, WalletConnect, and more.
+            </p>
+          </div>
+          <div class="space-y-6">
+            <div class="relative">
+              <label
+                class="absolute -top-2 left-4 px-1 bg-[var(--secondary-bg)] text-xs text-[var(--text-secondary)]"
+                for="username"
+                >Username</label
+              >
+              <input
+                class="form-input w-full rounded-xl text-white bg-transparent border-2 border-[var(--border-color)] focus:border-[var(--primary-color)] focus:ring-0 h-14 p-4 text-base"
+                id="username"
+                placeholder="Your unique handle"
+                value=""
+              />
+            </div>
+            <div class="relative">
+              <label
+                class="absolute -top-2 left-4 px-1 bg-[var(--secondary-bg)] text-xs text-[var(--text-secondary)]"
+                for="bio"
+                >Short Bio</label
+              >
+              <textarea
+                class="form-textarea w-full rounded-xl text-white bg-transparent border-2 border-[var(--border-color)] focus:border-[var(--primary-color)] focus:ring-0 min-h-32 p-4 text-base"
+                id="bio"
+                placeholder="Tell the hive about yourself..."
+              ></textarea>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-6">
+              <div class="w-48 h-48 flex-shrink-0">
+                <div class="relative group w-full h-full">
+                  <div
+                    class="hexagon w-full h-full bg-[var(--border-color)] flex items-center justify-center"
+                  >
+                    <span
+                      class="material-symbols-outlined text-6xl text-[var(--text-secondary)] group-hover:text-[var(--primary-color)] transition-colors"
+                      >add_a_photo</span
+                    >
+                  </div>
+                  <input
+                    class="absolute inset-0 opacity-0 cursor-pointer"
+                    title="Upload profile picture"
+                    type="file"
+                  />
+                </div>
+              </div>
+              <div class="text-center md:text-left">
+                <h3 class="text-lg font-bold text-white">
+                  Your Hexagonal Avatar
+                </h3>
+                <p class="text-sm text-[var(--text-secondary)] mt-1">
+                  Upload a picture for your profile. It will be cropped into a
+                  hexagon. Recommended size: 400x400px.
+                </p>
+                <button
+                  class="mt-4 flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-transparent border-2 border-[var(--primary-color)] text-[var(--primary-color)] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[var(--primary-color)] hover:text-[var(--dark-bg)] transition-colors"
+                >
+                  <span class="truncate">Choose File</span>
+                </button>
+              </div>
+            </div>
+            <div class="border-t border-[var(--border-color)] pt-6">
+              <h3 class="text-lg font-bold text-white">
+                Your Starting Hive Rank
+              </h3>
+              <p class="text-sm text-[var(--text-secondary)] mt-1">
+                Based on your wallet's activity, you begin at this rank. Higher
+                ranks unlock greater rewards.
+              </p>
+              <div class="mt-4">
+                <div class="flex justify-between items-center mb-1">
+                  <p class="text-sm font-medium text-white">Level 3</p>
+                  <p class="text-sm font-bold text-[var(--primary-color)]">
+                    60<span class="font-normal text-xs">% to Level 4</span>
+                  </p>
+                </div>
+                <div class="w-full bg-[var(--border-color)] rounded-full h-2.5">
+                  <div
+                    class="bg-[var(--primary-color)] h-2.5 rounded-full"
+                    style="width: 60%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center pt-4">
+              <button
+                class="w-full max-w-sm flex items-center justify-center gap-3 h-14 px-6 bg-[var(--primary-color)] text-[var(--dark-bg)] rounded-full font-bold text-xl hover:opacity-90 transition-opacity"
+              >
+                <span class="truncate">Create Profile &amp; Join</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

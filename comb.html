@@ -1,0 +1,386 @@
+<html>
+  <head>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+    <style type="text/tailwindcss">
+      :root {
+        --amber-400: #fbbf24;
+        --green-500: #22c55e;
+        --red-500: #ef4444;
+      }
+      .honeycomb {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 24px;
+      }
+      .cell {
+        position: relative;
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+        aspect-ratio: 1 / 1.15;
+        transition: transform 0.2s ease-in-out;
+      }
+      .cell:hover {
+        transform: scale(1.05);
+        z-index: 10;
+      }
+      .cell-inner {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        background-color: #1a1a1a;
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding: 1.5rem;
+      }
+      .cell-verified {
+        background: var(--green-500);
+      }
+      .cell-pending {
+        background: var(--amber-400);
+      }
+      .cell-challenged {
+        background: var(--red-500);
+      }
+      .cell-content {
+        color: white;
+        text-align: left;
+      }
+    </style>
+    <title>HexiHive - The Comb</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body
+    class="bg-[#111111] text-white"
+    style="font-family: 'Spline Sans', 'Noto Sans', sans-serif"
+  >
+    <div class="flex min-h-screen flex-col">
+      <header
+        class="sticky top-0 z-20 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#2a2a2a] bg-[#111111]/80 px-10 py-4 backdrop-blur-sm"
+      >
+        <div class="flex items-center gap-4">
+          <svg
+            fill="none"
+            height="28"
+            viewBox="0 0 24 28"
+            width="28"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M23.25 7V21L12 28L0.75 21V7L12 0L23.25 7Z"
+              fill="#FBBF24"
+            ></path>
+            <path
+              d="M12 14L5.25 10.0625V17.9375L12 21.875L18.75 17.9375V10.0625L12 14Z"
+              fill="#111111"
+            ></path>
+          </svg>
+          <h1 class="text-2xl font-bold tracking-tight text-white">HexiHive</h1>
+        </div>
+        <nav class="hidden items-center gap-8 md:flex">
+          <a class="text-amber-400 text-sm font-semibold" href="#">Hives</a>
+          <a
+            class="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+            href="#"
+            >Explore</a
+          >
+          <a
+            class="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+            href="#"
+            >Notifications</a
+          >
+          <a
+            class="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+            href="#"
+            >Messages</a
+          >
+        </nav>
+        <div class="flex items-center gap-4">
+          <button
+            class="rounded-full p-2 text-gray-300 hover:bg-[#2a2a2a] hover:text-white transition-colors"
+          >
+            <svg
+              fill="currentColor"
+              height="20px"
+              viewBox="0 0 256 256"
+              width="20px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+              ></path>
+            </svg>
+          </button>
+          <button
+            class="hidden md:flex items-center gap-2 rounded-full bg-amber-400 px-4 py-2 text-sm font-bold text-black transition-opacity hover:opacity-90"
+          >
+            <span>Create</span>
+            <svg
+              fill="currentColor"
+              height="16px"
+              viewBox="0 0 256 256"
+              width="16px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"
+              ></path>
+            </svg>
+          </button>
+          <div
+            class="size-10 rounded-full bg-cover bg-center"
+            style="
+              background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdGVpB80pEKD59sJZoC9EM21wbMbkeVL5rgM8Mt4NC7sId5e7Db5kQ88_48bSnVizYpJpF8UW0lZxwEaPHWwIvYtw5jmywAjjobokPMf3hztH58Jy2baidWRHEudeTMFgSrnCpclsW38geAky54IF-KCOJONazZxgfN9DEj3ItR7DlX9i6r8sVKaUNRK76xPBKERFafDfZfxegm8203TBsayIaK0y7Us-wQgNkrgTXODDSFz5lvCtKFb3eO84OjG03U6s4sCGEGaA');
+            "
+          ></div>
+        </div>
+      </header>
+      <main class="flex-1 px-4 py-8 sm:px-6 md:px-10">
+        <div class="mx-auto max-w-7xl">
+          <h2 class="mb-8 text-3xl font-bold tracking-tight text-amber-400">
+            The Comb
+          </h2>
+          <div class="honeycomb">
+            <div class="cell cell-verified">
+              <div
+                class="cell-inner bg-cover bg-center"
+                style="
+                  background-image: linear-gradient(
+                      to top,
+                      rgba(0, 0, 0, 0.8) 20%,
+                      transparent 60%
+                    ),
+                    url('https://lh3.googleusercontent.com/aida-public/AB6AXuC1g_JAsDALtMLLJKofMLtX4JQBepYNJOaOVBWmkEVFlFKGf-LJvqIh2WdQk58M_ZpwgOh_lHGjYUoihkprxrOg-CVmszkTmDxanMSv44PZZyJuHscJllxWNEpf9RCx2QmUDYnO1zJvg_qXqPveTfDCytx29W8psWRWj9AomOV1D5B2fm0E-f_2lJ-xzvOfquCZBn5FprXNhzGGKhIGCWWT0c93trm-JAhYjgSOhVgMb_JtX4jglp2m3XYcLVFodEx2lu_c5Q4FDvo');
+                "
+              >
+                <div class="cell-content">
+                  <h3 class="mb-2 font-bold leading-tight line-clamp-2">
+                    Tech Trends Shaping Tomorrow
+                  </h3>
+                  <p class="mb-3 text-xs text-gray-300 line-clamp-2">
+                    A deep dive into the innovations that will define the next
+                    decade.
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      alt="Author Avatar"
+                      class="size-6 rounded-full"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV_yRp6e3slQGxjdSQIxrhdam_rL_tBFsahTLTpq9O7r5TmTVhujJEhlZqpHRvVe83kCEw1p3VzfmHbg-cCL-QOkoGTLr-UpFSXjGvDlNax8svZhefmHPDCWRGV32XRvtMtSveNbXPLcP8cPYupaLR2Goa6LDzSQxd-I64-6MMaK75RE9DroNO6xdGQzHTkKOVMyRUeD9oOVAJ5h3aYtB9Jh0uG-k3Ktt7of2oAZ0NRmMYFoDJgUVzxrCAh7-SE7lbZ2X5dt0eZ70"
+                    />
+                    <span class="text-xs font-medium text-gray-200"
+                      >Alex Doe</span
+                    >
+                    <span class="ml-auto text-xs font-bold text-green-400"
+                      >92%</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cell cell-pending">
+              <div
+                class="cell-inner bg-cover bg-center"
+                style="
+                  background-image: linear-gradient(
+                      to top,
+                      rgba(0, 0, 0, 0.8) 20%,
+                      transparent 60%
+                    ),
+                    url('https://lh3.googleusercontent.com/aida-public/AB6AXuAo4IQFCWY4ehxLDpsKEiqgEKBbsRKePUYRdXljcnsGfrjXFfT7KyyACOIg4nJdO4tdyTDvImPpZfjPNpdDV6Qo1IDItqEd2wYreJs9fBTFIjncGyngiH7kAw6jn9HaHVXE4GBWf01q9aI-_zAw_-7YyakD2FoqZeSSpz_gMtNcBrxKSev3vKbLTh8n61J70XGNrARSJbf_Qf1ct8tmrdKEj22RmjVgVEPML9atO3VMmMdWfH61frmeaFM8Km0dxuJlAG0STg7PQFs');
+                "
+              >
+                <div class="cell-content">
+                  <h3 class="mb-2 font-bold leading-tight line-clamp-2">
+                    The Future of Sustainable Energy
+                  </h3>
+                  <p class="mb-3 text-xs text-gray-300 line-clamp-2">
+                    Can we transition to 100% renewable sources? Experts weigh
+                    in.
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      alt="Author Avatar"
+                      class="size-6 rounded-full"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAIc3kW08HBtmw0dBd_EuYZ_lffN5lXhf4Pg_Dt_QBvkAIcvDIlQJgtAQqQRwgYhmhdoc60MveAfRjwnaA5FFawa-Su7_ia7udTCGhYenh-DPrp7M2uGEV-K-6KBNPuf4eGIELS4e3G2uFjrQ0mnp5R1GNkKhKvXp8O0nFRqussQ10L1FQj_NY8gTSm3voMTUYWy-vWrXQqQ2DQZAWU-EcFnknhPVq4NzD0zf8bZi_Ar1MHE2siVy4QyDhh8-FO9Dj9tJA8vpgnu0"
+                    />
+                    <span class="text-xs font-medium text-gray-200"
+                      >Jane Smith</span
+                    >
+                    <span class="ml-auto text-xs font-bold text-amber-400"
+                      >78%</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cell cell-verified">
+              <div
+                class="cell-inner bg-cover bg-center"
+                style="
+                  background-image: linear-gradient(
+                      to top,
+                      rgba(0, 0, 0, 0.8) 20%,
+                      transparent 60%
+                    ),
+                    url('https://lh3.googleusercontent.com/aida-public/AB6AXuDp0rO3WcYEKE88ooh_sYNeTo7mDuvPN3YLIw93XxgfjVxveH-MSpjyphZvPMTR6Da1esoK9RkqYpjWyrcfKWjB40Bajjk0MTG4xB2KS5s3SVS79cGa4JbL-rAuOh5Jb0azQYR0RewbK8pTcZhUD-tIHgh2Z9Sx3SVOC3fOrPUiqco9YiQiyP8OIO4sv7dg-XlYOx4wjhojZjQRmbDU8b_4l-tu9qT9HM5KIn5adgujlOJq9LFYgOui74SUZhHSIdGmxZqVSjlyWrw');
+                "
+              >
+                <div class="cell-content">
+                  <h3 class="mb-2 font-bold leading-tight line-clamp-2">
+                    Decoding the Human Genome
+                  </h3>
+                  <p class="mb-3 text-xs text-gray-300 line-clamp-2">
+                    The latest breakthroughs in genetic sequencing and their
+                    implications.
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      alt="Author Avatar"
+                      class="size-6 rounded-full"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcpWupN2XrhODQ8JFxm8cIIMzmH0FDjd2ITjRdGDNYOq_6cSlzeILKvkr6EKJsfa_7rMyjPf10lirTDXrO4jpYdlc4020TNg1TYr9V1ZiQW0f_Iz3iszMz6JCeAu3WrJF0DQFIkFUr15BjfITz8AqNKdf92_KlOprbvtwgJaZCe2KELts4TGu8CFTd36zw7nbbcnajPgjt97v-VQBsQKC6VqALr8QdvNrWxhrckw4go0ePig0V-H7Llram6l0Z9EP73KdAxObSRcI"
+                    />
+                    <span class="text-xs font-medium text-gray-200"
+                      >Sam Wilson</span
+                    >
+                    <span class="ml-auto text-xs font-bold text-green-400"
+                      >95%</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cell cell-challenged">
+              <div
+                class="cell-inner bg-cover bg-center"
+                style="
+                  background-image: linear-gradient(
+                      to top,
+                      rgba(0, 0, 0, 0.8) 20%,
+                      transparent 60%
+                    ),
+                    url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3PwbkpRpAg_RbxMG_N0XUFoyb6z_Cct9B4IMW0TJUGapT8SpoF_Ptnb38btxPK6coQCZKnMk6MxiCylrXABm5ZdhIQVGP9jbeHqzNSBOulYdpYelWddmYJqTSxz9m-TPTwY0FXyRjLVTCaNpYIkyaDdKcJYxEDYoF9_SXlfTb2LJUzyzPAhB0h6PSIaoq4tKkzjYfGjAYOk6_2dE88oZbjv1r4Mh4IJbDoXTu_DojmBN1pVHsMO9kXH1pjTHHEQfl1ODyJePg7sU');
+                "
+              >
+                <div class="cell-content">
+                  <h3 class="mb-2 font-bold leading-tight line-clamp-2">
+                    The Rise of Decentralized Finance
+                  </h3>
+                  <p class="mb-3 text-xs text-gray-300 line-clamp-2">
+                    Is DeFi the future of finance or a bubble waiting to burst?
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      alt="Author Avatar"
+                      class="size-6 rounded-full"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBPJil1DiaQ66MlbxVhoyodFFrQDb7qOU29awkAg9A3xZIWdbD2lo8ojsvqIyTmHKcVaa4Y167JJsDsJ1GoYaK2xvLeSYNrCb5hybMdcd6CUP0bW3qiF-68cUQ2nXvc7wyiag1grnNpkM_x0rBGCp4wMu5nCV2skYCH4Xg4CybFm5o0SqgjeNBxchSw65c1EG9QiqgNRQSz5FUMDonSW57VgfNg4c8yVRL7yLxmesrnOUgL84sxYUgI1NF32qIubZVNpI7jq0gb4c"
+                    />
+                    <span class="text-xs font-medium text-gray-200"
+                      >Maria Hill</span
+                    >
+                    <span class="ml-auto text-xs font-bold text-red-400"
+                      >42%</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cell cell-verified">
+              <div
+                class="cell-inner bg-cover bg-center"
+                style="
+                  background-image: linear-gradient(
+                      to top,
+                      rgba(0, 0, 0, 0.8) 20%,
+                      transparent 60%
+                    ),
+                    url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjutVXxybWcpwJnS9wTuJ1aiAjt4wxlSQCSDajz3Z-u7H93zK1i2Y8aPAzO80WzlOXPRyjF4cWgklL5uuB2Ao2qQFkP-VONOMF5BCkWbrSRUfcu6YJ7YxmmhesuHZFkXzAAh5YThMbGZUUeucpTy1t1C_Jk_-nVqKtGq5-yOfXpNA2-gv_EXkW5ykOwyUTmHxfRCjk4xooqYZ9jYy8qes_-B5mLqQ_7sKZGDim7QdvpdHSiHg19VPJhElKsBikV8HV7sM5yCcsIP4');
+                "
+              >
+                <div class="cell-content">
+                  <h3 class="mb-2 font-bold leading-tight line-clamp-2">
+                    Exploring the Metaverse
+                  </h3>
+                  <p class="mb-3 text-xs text-gray-300 line-clamp-2">
+                    What it is, why it matters, and how to get involved.
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      alt="Author Avatar"
+                      class="size-6 rounded-full"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFoY4vOX6irjpEPfmkB4vvQ7aEkuxq_pSnsq2x6hwkD8YcCC2g7gNKi5VeZMzleb3lT7JuRC2S3d05I4s_uixPzRElnHPYQEUIHqWfww0YK4RQ8LQEq539Ojj3piZt3gCMhB56CrKkxmmmlHXdwpDDCI5tE74FU_o-LYqH4vradrkOO4nbEmIO7SRaEqxLBSXTRjhp5ZbJkFcvZBHOuX6JMQqg5nvdlI5PBGPDL7uz2hhvtpGtj2xoLWNMBnbfCtUvN-7FaQiDEW8"
+                    />
+                    <span class="text-xs font-medium text-gray-200"
+                      >Chris Evans</span
+                    >
+                    <span class="ml-auto text-xs font-bold text-green-400"
+                      >89%</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cell cell-pending">
+              <div
+                class="cell-inner bg-cover bg-center"
+                style="
+                  background-image: linear-gradient(
+                      to top,
+                      rgba(0, 0, 0, 0.8) 20%,
+                      transparent 60%
+                    ),
+                    url('https://lh3.googleusercontent.com/aida-public/AB6AXuD02MtIA1wZ8Ewd5HqjBCt1bdPWtj73DZJ2IitYss9oifm6keafnutmMqgrLic6PHrrIFRuWnbq1fJbMqZWxkpSsUtTuqd8OVnaM2Dgs796unKkda5YjAOwmLfRW9MD2ehMvovKETaoeR6R2TrMqdr1jo3kWg7Th6dr3YCaHZc4Y7SprE70PlLI-du47arXa8K3gfrD8JE_jUVne6YKWS3-XYVidp6a74VWXDz-oHb_nvZATg69fY6scFRYo6Bk24NUa3pyLeJkvxs');
+                "
+              >
+                <div class="cell-content">
+                  <h3 class="mb-2 font-bold leading-tight line-clamp-2">
+                    The Ethics of Artificial Intelligence
+                  </h3>
+                  <p class="mb-3 text-xs text-gray-300 line-clamp-2">
+                    Navigating the moral landscape of intelligent machines.
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      alt="Author Avatar"
+                      class="size-6 rounded-full"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdzKCuQ_4snNzSLB6PSxiBkRQY4cLnYJJqfdxqvJnH5PvGVzcoWcY-NHtqCNkM_HP6JYL2VFu3z4yEYlv2Tso65JvxdPqhTlHSy8CpNLi7dYzflJDjoQWvrhDQLtrJHtj1EjeaQ83bDpYt88YI3IffJ7ywffk3oXb4c6Mn-DNFK-lkucst63jRUM1MalkqBYODqUBO6Pju7ei-F5qJQ8HRckuUp8G5-amJeSfi8xO9xcCmWrRSbKzjXxAmKOsHNtSz3I2gIsnE9GY"
+                    />
+                    <span class="text-xs font-medium text-gray-200"
+                      >Laura Palmer</span
+                    >
+                    <span class="ml-auto text-xs font-bold text-amber-400"
+                      >65%</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --primary-color: #38e07b;
+      }
+      .hive-nav a:not(.active-hive):hover {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity));
+        border-bottom-color: #366348;
+      }
+    </style>
+  </head>
+  <body class="bg-[#101312] text-white">
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-[#101312] dark group/design-root overflow-x-hidden"
+      style="font-family: 'Spline Sans', 'Noto Sans', sans-serif"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header
+          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#2a2a2a] px-10 py-4"
+        >
+          <div class="flex items-center gap-10">
+            <div class="flex items-center gap-3 text-white">
+              <svg
+                class="w-8 h-8 text-[var(--primary-color)]"
+                fill="none"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 4L44 14V34L24 44L4 34V14L24 4Z"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="4"
+                ></path>
+                <path
+                  d="M4 14L24 24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="4"
+                ></path>
+                <path
+                  d="M44 14L24 24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="4"
+                ></path>
+                <path
+                  d="M24 44V24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="4"
+                ></path>
+                <path
+                  d="M34 9L14 19"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="4"
+                ></path>
+              </svg>
+              <h1 class="text-white text-2xl font-bold tracking-tight">
+                HexiHive
+              </h1>
+            </div>
+          </div>
+          <div class="flex flex-1 justify-end items-center gap-4">
+            <label class="relative flex w-full max-w-sm">
+              <div
+                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+              >
+                <span class="material-symbols-outlined">search</span>
+              </div>
+              <input
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-white bg-[#1a1a1a] border border-[#2a2a2a] focus:outline-0 focus:ring-2 focus:ring-[var(--primary-color)] h-11 placeholder:text-gray-400 pl-10 pr-4 text-base font-normal"
+                placeholder="Search Hives..."
+                value=""
+              />
+            </label>
+            <button
+              class="flex items-center justify-center rounded-full h-11 w-11 bg-[#1a1a1a] border border-[#2a2a2a] text-gray-300 hover:text-white hover:bg-[#2a2a2a] transition-colors"
+            >
+              <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-11 border-2 border-[#2a2a2a]"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDgAJWcrr1ic1v58uXv9fTFzbzQu_hA5AqsmFSwT3fbsfAzXnwAMcLfd6e8LO844dYCttc1ITjsXQAXzXK_QQryni68EUVXtWpv0cv3qWU7Sak2l2WyelRHkHWA5B1O3TJD7LkfwbTcU7rc7mTTrP0EpGYcf-Yz8H9PsRH5kZptHu8BnqUJvIAFvBzxCnTHgYWVjX7MJgpdBPXnkab4H2IYnMfqLb_0GzfmnXLwFmcUqrBWzNSDcGA2EteNEEmuFdZPAIQBTWnq7Hs');
+              "
+            ></div>
+          </div>
+        </header>
+        <main class="flex-1">
+          <div class="border-b border-[#2a2a2a]">
+            <nav class="hive-nav flex justify-center gap-8 px-10">
+              <a
+                class="active-hive flex flex-col items-center justify-center border-b-2 border-b-[var(--primary-color)] text-white pb-3 pt-4 transition-colors duration-200"
+                href="#"
+              >
+                <p class="text-base font-semibold">News</p>
+              </a>
+              <a
+                class="flex flex-col items-center justify-center border-b-2 border-b-transparent text-[#96c5a9] pb-3 pt-4 transition-colors duration-200"
+                href="#"
+              >
+                <p class="text-base font-semibold">Technology</p>
+              </a>
+              <a
+                class="flex flex-col items-center justify-center border-b-2 border-b-transparent text-[#96c5a9] pb-3 pt-4 transition-colors duration-200"
+                href="#"
+              >
+                <p class="text-base font-semibold">Art</p>
+              </a>
+              <a
+                class="flex flex-col items-center justify-center border-b-2 border-b-transparent text-[#96c5a9] pb-3 pt-4 transition-colors duration-200"
+                href="#"
+              >
+                <p class="text-base font-semibold">Science</p>
+              </a>
+              <a
+                class="flex flex-col items-center justify-center border-b-2 border-b-transparent text-[#96c5a9] pb-3 pt-4 transition-colors duration-200"
+                href="#"
+              >
+                <p class="text-base font-semibold">Culture</p>
+              </a>
+            </nav>
+          </div>
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div class="lg:col-span-2">
+                <div class="relative overflow-hidden rounded-2xl group">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA6253Ual7jhV-GPaR5EmVaNibt6NnexeZTAxDRK3Ye2TZWCLiDunUkg_46iN2ng8I2bbz7897GS5yxSiPH0sB8I5Smz6pNTId9eKJRvvjVuGylbf4iWeDL-ke1Irqdnd4G4LiAABCfOwrUcndjFgv4GybYbZiaKv-_2NMVmClcQyoI9oOpM1K5XvObPjQDczDRcH11GB6atlDOjHrLL4tDe1A5BqVK_cyoZngm_BiaW2xZUoTVAzoIcNfd_COaNfPjfCmxqtICoGQ');
+                    "
+                  ></div>
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"
+                  ></div>
+                  <div class="absolute bottom-0 left-0 p-6">
+                    <span
+                      class="text-sm font-medium text-[var(--primary-color)]"
+                      >Trending in News</span
+                    >
+                    <h2
+                      class="mt-2 text-3xl font-bold leading-tight text-white"
+                    >
+                      Global Tech Summit Highlights Breakthroughs in AI and
+                      Sustainability
+                    </h2>
+                    <p class="mt-3 text-gray-300">
+                      The annual Global Tech Summit concluded yesterday,
+                      showcasing groundbreaking advancements in artificial
+                      intelligence and sustainable technologies.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-1">
+                <h2
+                  class="text-2xl font-bold leading-tight tracking-tight text-white mb-4"
+                >
+                  Top Stories
+                </h2>
+                <div class="space-y-4">
+                  <div
+                    class="flex items-start gap-4 rounded-xl p-4 bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[var(--primary-color)] transition-colors duration-200"
+                  >
+                    <div class="flex-1">
+                      <p class="text-base font-bold leading-tight text-white">
+                        Tech Giant Unveils New Quantum Computing Platform
+                      </p>
+                      <p class="text-sm text-gray-400 mt-1">
+                        A leading technology company has announced the launch of
+                        its new quantum computing platform.
+                      </p>
+                    </div>
+                    <div
+                      class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-lg flex-shrink-0"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9qMPI7EJmzXpD0GjMgbpw-Prwf1cXkWTYOQsaNiiTlA7hJ0JXtWR9QRbj0-tYV8w4LSEWBFp0u6q5q8SUjpsIEi1j_zsNKk0fvocWBm4NvZVkm5hDk163SJM3eqqgxLYn7CEiqDBvBbNODQiYGch3ce-2XPaiSUwcmFPw-EhjHFFPRuR6b7miYboyXcMIP9zLIwchOh9KDbGBIjNJ7KkMxpde3VWFIUfFCsgReZgfuV3B-kMpqh3DKZyK-qgMjoTb2WFcLSmqeGI');
+                      "
+                    ></div>
+                  </div>
+                  <div
+                    class="flex items-start gap-4 rounded-xl p-4 bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[var(--primary-color)] transition-colors duration-200"
+                  >
+                    <div class="flex-1">
+                      <p class="text-base font-bold leading-tight text-white">
+                        Renewable Energy Sector Sees Record Investment
+                      </p>
+                      <p class="text-sm text-gray-400 mt-1">
+                        The renewable energy sector experienced unprecedented
+                        investment in the third quarter of this year.
+                      </p>
+                    </div>
+                    <div
+                      class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-lg flex-shrink-0"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwWiK0JDs8orosz8tHLmLhQ4my7bIzt1BWzb9tPvm1x81Gd61vhjgQZc19Tk2NOd6Tv4pQfnf6qe46TJG0Jh9OnwyUwwrcZmmoDR7pBZ1YG5D-vAT84QAJRROZskd51i-H5gXCXEp1QF681GzAunXGfsdu6uGmoJV3Ivyck2OD6B6fuSUCqNMMFtkldu6hAbg3k3a89A7cjJnYgdLpiIvdz50ibTcxNSqaiaS2D0_PIYhRybtE2M-t8LS4RBBdas84ZvzDpnMvmOM');
+                      "
+                    ></div>
+                  </div>
+                  <div
+                    class="flex items-start gap-4 rounded-xl p-4 bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[var(--primary-color)] transition-colors duration-200"
+                  >
+                    <div class="flex-1">
+                      <p class="text-base font-bold leading-tight text-white">
+                        Space Mission Discovers Potential Signs of Life
+                      </p>
+                      <p class="text-sm text-gray-400 mt-1">
+                        A recent space exploration mission has detected
+                        potential signs of microbial life on a distant
+                        exoplanet.
+                      </p>
+                    </div>
+                    <div
+                      class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-lg flex-shrink-0"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5plLePatA7vZZNqfoSZHgPm9LagTShs4Jsfs3Vc-5-wyC9ShtJ7puIaO8SYPpr7SbZb99799TRG9pBsc2tn9wfs-B15fXKBHvCTmCQ_rTglSZN-9_qI4iTnJImaUKW1siE3oMpwUcN34UPjgQ048SiREZ4B2HFmVx_TH9fYNdSHhflBiQ5z0WYllxiIHz82rDP6TBNmgglXyrvgHxAEqn6qpmiC0CyxOHyjbftf4VXE_uJC8NblXh75H9wAQu5uznU6RuEYgrZjQ');
+                      "
+                    ></div>
+                  </div>
+                  <div
+                    class="flex items-start gap-4 rounded-xl p-4 bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[var(--primary-color)] transition-colors duration-200"
+                  >
+                    <div class="flex-1">
+                      <p class="text-base font-bold leading-tight text-white">
+                        Global Health Organization Launches New Initiative
+                      </p>
+                      <p class="text-sm text-gray-400 mt-1">
+                        The GHO has launched a new initiative to combat emerging
+                        infectious diseases.
+                      </p>
+                    </div>
+                    <div
+                      class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-lg flex-shrink-0"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4lzsRDeHPEqVezO8laoK4XXAqpV6iBVM6ansFCdNZXX3Et0rjCECA2Al1mMLJJuzqfVt0LBNt51REgyRNHG8FsZHU7AuuGc5H9NRu9jGTNSCaiik-kmuj0aOZ1TcY4g6PfkcS4SYNZL597NnewV7oTC1UxNafDJjlyf0Dz29LQ3b6SvtouHK5XOwFJ1C5-1eKOdCQFERzt1UjwjiXF3CjRiDNp3SRC9OOlAy2JEOEFE-6DGKgL3C4dVLhOU2ZSN79XUdkonZKjr8');
+                      "
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

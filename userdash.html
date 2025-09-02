@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --primary-50: #f0fdf6;
+        --primary-100: #dffcee;
+        --primary-200: #bbf6db;
+        --primary-300: #86f0be;
+        --primary-400: #4ae59b;
+        --primary-500: #20d579;
+        --primary-600: #15b864;
+        --primary-700: #149252;
+        --primary-800: #157244;
+        --primary-900: #145b3a;
+        --primary-950: #0a3120;
+      }
+      .hexagon {
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#101312] dark"
+    style="font-family: 'Spline Sans', 'Noto Sans', sans-serif"
+  >
+    <div
+      class="relative flex size-full min-h-screen flex-col overflow-x-hidden"
+    >
+      <header
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-primary-900 px-10 py-3"
+      >
+        <div class="flex items-center gap-8">
+          <a class="flex items-center gap-2 text-white" href="#">
+            <svg
+              class="text-primary-500"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M13.2 9.5 8.8 4.3"></path>
+              <path d="M13.2 9.5 8.8 4.3"></path>
+              <path d="m13.2 14.7-4.4 5.2"></path>
+              <path d="M8.8 19.9 4.4 14.7"></path>
+              <path d="m19.6 9.5-4.4-5.2"></path>
+              <path d="M15.2 4.3 19.6 9.5"></path>
+              <path d="M14 9.5a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0Z"></path>
+              <path
+                d="M9.2 14.7a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0Z"
+              ></path>
+              <path
+                d="M18.8 14.7a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0Z"
+              ></path>
+            </svg>
+            <h1 class="text-lg font-bold">HexiHive</h1>
+          </a>
+          <nav class="flex items-center gap-9">
+            <a
+              class="text-white/80 hover:text-white text-sm font-medium transition-colors"
+              href="#"
+              >Home</a
+            >
+            <a
+              class="text-white/80 hover:text-white text-sm font-medium transition-colors"
+              href="#"
+              >Explore</a
+            >
+            <a
+              class="text-white/80 hover:text-white text-sm font-medium transition-colors"
+              href="#"
+              >Create</a
+            >
+          </nav>
+        </div>
+        <div class="flex flex-1 justify-end gap-4">
+          <label class="flex w-full max-w-xs items-stretch">
+            <div
+              class="flex w-full items-stretch rounded-full bg-primary-950/50"
+            >
+              <div class="flex items-center justify-center pl-4">
+                <span class="material-symbols-outlined text-white/60">
+                  search
+                </span>
+              </div>
+              <input
+                class="form-input w-full flex-1 resize-none overflow-hidden bg-transparent text-white placeholder:text-white/60 focus:outline-none focus:ring-0 border-none px-4 py-2.5 text-sm"
+                placeholder="Search HexiHive"
+                value=""
+              />
+            </div>
+          </label>
+          <button
+            class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-primary-950/50 text-white transition-colors hover:bg-primary-950"
+          >
+            <span class="material-symbols-outlined"> notifications </span>
+          </button>
+          <div class="flex items-center">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8bQy_D6wdCaHl-kTvYyvDYUm-DrvqGOZTE7peZabyF7ewY400holqyzSIN-tSKVzGlzBopemU32sidKLreK_yQiVR8sQ0FriWuw5fKlrfGSUx4Q4XAtThsoWQjlPlOP7TnDUwqTSC9AXaY2yvnNNk59HB_BPU1295AlXYHpHn9rp66TyQbQ02UmSLsDQQiIo3OSaOhC9nlIiaW6VCCv5Uun_PKxSTAwEr6LuOLiWR_1Fwvy-0fylgCRmMG78Uzjp7J5YC-YIjJlM');
+              "
+            ></div>
+          </div>
+        </div>
+      </header>
+      <main class="flex flex-1 justify-center py-10 px-4 sm:px-6 lg:px-8">
+        <div class="w-full max-w-4xl">
+          <div
+            class="flex flex-col items-center gap-6 p-4 md:flex-row md:items-start"
+          >
+            <div
+              class="hexagon bg-center bg-no-repeat aspect-square bg-cover size-32 shrink-0"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMIlVM2K7qtemBxGwpOn6ZEbN_9yj37m530Pd9E4b7NWeO_X2u0ZLKBjgTfgFeaJYyPE2kcBdKXzwOsSnHmr9Pm_aU_sFVBnKFsWN_oNwtslURibCMXXfcNZW1uwSgpQ3S9pvMy3J2BVTjJTyXE-7UvOCfdYvotSEBCyomuiWSIEGtsJQ2ZUUOiwSH_WilMRshWbc9oAHmXGY474atNp-GEuAuXGD1kNcGitnzKBbHdclrJeeCPACN9GDjfjRpikQgPXvbs7WHpkw');
+              "
+            ></div>
+            <div
+              class="flex flex-col items-center gap-2 text-center md:items-start md:text-left"
+            >
+              <h2 class="text-3xl font-bold text-white">Alex</h2>
+              <p class="text-white/60">@alex_creator</p>
+              <p class="font-mono text-sm text-white/60">Wallet: 0x123...456</p>
+              <div
+                class="mt-4 flex items-center gap-2 rounded-full bg-primary-900/50 px-4 py-2"
+              >
+                <span class="text-primary-400">
+                  <svg
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M13.2 9.5 8.8 4.3"></path>
+                    <path d="M13.2 9.5 8.8 4.3"></path>
+                    <path d="m13.2 14.7-4.4 5.2"></path>
+                    <path d="M8.8 19.9 4.4 14.7"></path>
+                    <path d="m19.6 9.5-4.4-5.2"></path>
+                    <path d="M15.2 4.3 19.6 9.5"></path>
+                    <path
+                      d="M14 9.5a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0Z"
+                    ></path>
+                    <path
+                      d="M9.2 14.7a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0Z"
+                    ></path>
+                    <path
+                      d="M18.8 14.7a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0Z"
+                    ></path>
+                  </svg>
+                </span>
+                <p class="text-sm font-semibold text-white">
+                  Credibility Score (Hive Rank):
+                </p>
+                <p class="text-lg font-bold text-primary-400">85</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8">
+            <div class="border-b border-primary-900">
+              <nav aria-label="Tabs" class="-mb-px flex space-x-8 px-4">
+                <button
+                  aria-current="page"
+                  class="whitespace-nowrap border-b-2 border-primary-500 px-1 py-4 text-sm font-medium text-primary-500"
+                >
+                  My Comb
+                </button>
+                <button
+                  class="whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-sm font-medium text-white/60 hover:border-white/30 hover:text-white"
+                >
+                  Activity History
+                </button>
+                <button
+                  class="whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-sm font-medium text-white/60 hover:border-white/30 hover:text-white"
+                >
+                  $HNY Token Balance/Transactions
+                </button>
+              </nav>
+            </div>
+            <div class="py-6">
+              <div
+                class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+              >
+                <div class="group relative aspect-square">
+                  <div
+                    class="hexagon size-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDueVWbY5jvrPXLlHl1Tfb9CrXR5uA9oH5DNGfci7Jh4wCRynSt7Q841VDuxhpVaKwCL5Pk9Rsoqcx1YSb17idWaQ7zL1NBHpR6QME3nBiEQ_Ci98dX0pbQS-AtFHQNCn9Z57-FFwE9cD3tKn_g-Xgv9870E-joDPlnx6NoTVLbF_ANaT-UH86NnHPjtE6zLFTT9QZWcU7pSUSwaYEaa_WtFLdbalcP2i8G3hSKY7iDmgYewyh8L82hyypWo4kRV40M0yYvQJxSks');
+                    "
+                  ></div>
+                </div>
+                <div class="group relative aspect-square">
+                  <div
+                    class="hexagon size-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_eqaLYntq7hRctiUPWJoI1kPdU9ZaysVDKpGkKFGj28fI5ONoa2nnqhZ8ZLEbkogsB2vVUbZN-1Wj6jV-zuB4FNxJLD5qqG6AVi8MhrB9snTLZTY9_HXsYbHuMVO6ONhS7aC5G0RpHR7z1qV9P6ymqDjGGEzKnMBD58jp3zj_Sm1QsEg5sUo13ENJKO3zT9lpNxrKcu0IWVURr3_6OUn4yCx26tbpPSBYQiBn0MlGMPEkX1omAui9KFG_dF5UgWMXT0-dMWLHqQM');
+                    "
+                  ></div>
+                </div>
+                <div class="group relative aspect-square">
+                  <div
+                    class="hexagon size-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTATmkvIbzt_fcLDO6sJO_wmNXvGLSaz9WnAlq26csFLZtUcBvV0NYelUIrUE_Xgtybs2PMT4daSHCRnsPoj7oyzkhy75x_-L8hkG-P0qmlzOo3NkDAf6mtrmPF8NQo7ohloTqeFcTNO3Zdkw9EPCLSA4KwyUI2GWv16UOXRRIFOldW-DKKW86miLKsRSiSw2b8VGAjQwZtWT3Ob1gXJCEkO82_KUup5RuMWU2lkPYwcgi6v5w9dWwJShZvGNRSQur_dR4zaM9nWc');
+                    "
+                  ></div>
+                </div>
+                <div class="group relative aspect-square">
+                  <div
+                    class="hexagon size-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDj5xYjZW4_V0x_TT_qm9uJnpys0jKJDV5gLK30XJciLcawydxjft4Iy4-5CBv5wu_rl7F4QLS1Mr3RBO8FKPjmNUMsGUu8yvayVL5e3dN-M4x4P2Myz2O6TkQHt3L8UR0txtM1MJih5LxJhRfJwAqXnWIx_bNgVMzkfdcKBVaYKv62BaVSOWdZcSIASvXJDHkbJ7I9B84BjCqRxyJtAV463zSyjI9ynQ9fYLWWqJpwiCAv068Me9NMam8l1yba4Mvu7SsnHTPDL1M');
+                    "
+                  ></div>
+                </div>
+                <div class="group relative aspect-square">
+                  <div
+                    class="hexagon size-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEHermOTf5D7JGFj058SjKV6j-jXy4WIVxmkTBi5RLwepGJkObeEqwJfD8ejHAcHmpZHD2SSqeEenT3IBgVn2BCQTuIXjlkGqLdREEvq4V1AnFfIn28mNJzuXXDz_ZJ9ZtJfcNTTPwfgU7kOuSuQQFCFx_6Mz_fWvwYQilJHC9xfIPNu2m5EW6jeZHVYjpdGEcNcS1-LBgoXBg6REJPcE8Wmcoq6yUpQuhHy6Z5cr5LoxIqzGo3-SYL_K9Qgng2IBn7anelIqhc8s');
+                    "
+                  ></div>
+                </div>
+                <div class="group relative aspect-square">
+                  <div
+                    class="hexagon size-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3qeRvdFAt5XylmAYHybCnTnku9IncRH6j13bqY51ZytLP-MMnXuC0sguS0C6n1BKeyN-cF81lW4LJuF_b-Let84bADJ8LZLr0zBSLdSYJJKAtT8NnIVxUIpNt42KzdxA52o6QLnfLEUeRlVKWRMOSu835_7Mh3Yv82M6roLTGcBqHx3VxPHvqUJqZHtM6c3gXZkNuow3Z-dKCtjnfo_mgau-6aDLxQYw9bkYucMkKrlQFuN5UpUcmVrip98iV24_bHWhde3dO4sU');
+                    "
+                  ></div>
+                </div>
+                <div class="group relative aspect-square">
+                  <div
+                    class="hexagon size-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA15OD2sZ8FXCaaxcA2qR0uPopjX3VlyNthQvakXp9Kx-uGGvZqcVMi0OQmzUcMk54UyQ9Ku0y4Je43BouBSwHkFZncQIKX3A6L_JOTbGPGIajBTbTow6r1yHM2B30LiGCvmfOkn4b0crbsDCiauEUcek08Z7nePC9kkrpvF7AhYA_OmGJTC2tu4vyh9OmuWB-P7mVKQnHt0eQX5JUsj9cTiRgm9-5OMEmBjnU5oCQNfG5U3M1GEyleiJK--6l2iUfNkcpAASXQQ7A');
+                    "
+                  ></div>
+                </div>
+                <div class="group relative aspect-square">
+                  <div
+                    class="hexagon size-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkTOS-8bQW9rcyOy9ZR2Xd-57rUpwLm6nuOyD-bu72L57eXkHbyJrKHUVbvvFs55g87n7OfCymi6gskt73m-UUW9N3La5VPETcgGMGelwHcLOiuSVmS5uEVHvSWjW5QHiNLNEq7bgVhtBwaiKh8rdlMUqO8tSFnAU5n3nIDpSj16jCfQ5A-ubxeYxPxgl0R6Z4sjF8vrk8CvD2IxYQo92bsVsGdjyHF6Sy74M0wQ9xey8ttHUIlz5G6BifYz3ZXiSlcLpoZoEQGTA');
+                    "
+                  ></div>
+                </div>
+                <div class="group relative aspect-square">
+                  <div
+                    class="hexagon size-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYKC3JUCCQhWdGYde2voObUcHevXSSdfpLX5lguOoSCu3wgVpDereq-zTmNj3omYLuhMT9IMMLeQdkEigkzNPDHlYPmuH4IUZujV8_DGub0VgJ2KCFkYXDhlw6UZYOCXxDr_dQIVPUB_rHXKDSml7Yq8zdfIQPL0cJhuSw7OPXaz5KWgiL1XaLu-ii6LgQpuw35tyVr7UIl8AtB-pjIW2LSv1cWVTsgEoUdSm1GHZx8rK-lG8LYeE_yFVDFxJX7uIrynosh4gjMdg');
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

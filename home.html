@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <title>HexiHive - Decentralized Social Platform</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <style type="text/tailwindcss">
+      :root {
+        --amber-gold: #ffbf00;
+        --dark-charcoal: #1a1a1a;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .honeycomb {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: radial-gradient(
+            circle at 60% 80%,
+            rgba(255, 191, 0, 0.1) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 20% 30%,
+            rgba(255, 191, 0, 0.1) 0%,
+            transparent 40%
+          );
+      }
+    </style>
+  </head>
+  <body class="bg-[var(--dark-charcoal)] text-white antialiased">
+    <div
+      class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+    >
+      <div class="honeycomb"></div>
+      <div
+        class="relative z-10 flex flex-col items-center text-center p-8 max-w-2xl mx-auto"
+      >
+        <div class="w-24 h-24 mb-8">
+          <svg
+            class="fill-current text-[var(--amber-gold)]"
+            viewBox="0 0 100 100"
+          >
+            <defs>
+              <clipPath id="hexagon-clip">
+                <polygon
+                  points="50 0, 93.3 25, 93.3 75, 50 100, 6.7 75, 6.7 25"
+                ></polygon>
+              </clipPath>
+            </defs>
+            <g clip-path="url(#hexagon-clip)">
+              <image
+                height="100%"
+                href="data:image/x-icon;base64,"
+                width="100%"
+                x="0"
+                y="0"
+              />
+            </g>
+          </svg>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          Welcome to <span class="text-[var(--amber-gold)]">HexiHive</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 max-w-lg mb-8">
+          A decentralized social platform where creators are rewarded for
+          quality and credibility. Join the hive and experience a new way to
+          connect and share.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+          <button
+            class="flex items-center justify-center gap-2 w-full sm:w-auto h-12 px-6 bg-[var(--amber-gold)] text-[var(--dark-charcoal)] font-bold rounded-full text-lg hover:bg-amber-400 transition-colors duration-300"
+          >
+            <span class="material-symbols-outlined"
+              >account_balance_wallet</span
+            >
+            Connect Wallet
+          </button>
+          <button
+            class="flex items-center justify-center gap-2 w-full sm:w-auto h-12 px-6 border-2 border-[var(--amber-gold)] text-[var(--amber-gold)] font-bold rounded-full text-lg hover:bg-[var(--amber-gold)] hover:text-[var(--dark-charcoal)] transition-colors duration-300"
+          >
+            <span class="material-symbols-outlined">info</span>
+            Learn More
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

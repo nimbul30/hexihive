@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <title>HexiHive - Post</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --primary-color: #38e07b;
+        --secondary-color: #1a3a24;
+        --text-primary: #ffffff;
+        --text-secondary: #96c5a9;
+        --background-color: #122118;
+        --border-color: #264532;
+      }
+      .honeycomb {
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-color text-primary"
+    style="font-family: 'Spline Sans', 'Noto Sans', sans-serif"
+  >
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+      <header
+        class="sticky top-0 z-20 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-color bg-background-color/80 px-10 py-3 backdrop-blur-sm"
+      >
+        <div class="flex items-center gap-4">
+          <div class="size-8 text-[var(--primary-color)]">
+            <svg
+              fill="none"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+          <h1 class="text-xl font-bold tracking-tight">HexiHive</h1>
+        </div>
+        <div class="flex flex-1 items-center justify-end gap-4">
+          <label class="relative hidden lg:block w-64">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary"
+              >search</span
+            >
+            <input
+              class="form-input w-full rounded-full border-none bg-secondary-color py-2 pl-10 pr-4 text-primary placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+              placeholder="Search HexiHive"
+              type="search"
+            />
+          </label>
+          <button class="relative rounded-full p-2.5 hover:bg-secondary-color">
+            <span class="material-symbols-outlined">notifications</span>
+            <span
+              class="absolute right-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs font-bold"
+              >3</span
+            >
+          </button>
+          <div
+            class="size-10 rounded-full bg-cover bg-center"
+            style="
+              background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuApMtYTuLkK3rbK78e8IhPtq2lu6rU87JS9upd8vm1VecJCnRjOPBwVPrEpWNBmmD9ZtrsUCGq6MUWqfoHtHpexI0EBCst35-i1E7zGVNjAOsSj18-l6bBkkOYDG0UwiuBqRlhvtTuEnMPcGSff_MK1kg0KIT8vVBbGFETwuqN5co1hJttWyP1crKhLyuUrnpUfJDd9GQMpT9_R8SOBbn-DYeAJn0IRdMduT2EUl05YuRJ-eiiNr5VPfzLtA6sHhDtyyHICohHVXR4');
+            "
+          ></div>
+        </div>
+      </header>
+      <main class="flex flex-1 justify-center px-4 py-8 sm:px-6 lg:px-8">
+        <div class="w-full max-w-4xl">
+          <div class="mb-8 px-4">
+            <nav class="text-sm">
+              <a
+                class="text-secondary hover:text-[var(--primary-color)]"
+                href="#"
+                >Home</a
+              >
+              <span class="mx-2 text-secondary">/</span>
+              <span class="text-primary">Post</span>
+            </nav>
+          </div>
+          <article
+            class="space-y-6 rounded-xl bg-secondary-color/30 p-6 md:p-8"
+          >
+            <header>
+              <h2
+                class="text-3xl font-bold leading-tight tracking-tight text-primary md:text-4xl"
+              >
+                The Future of Decentralized Social Media
+              </h2>
+              <p class="mt-2 text-sm text-secondary">
+                Posted by Alex Rivera · 2d ago
+              </p>
+            </header>
+            <div
+              class="prose prose-invert max-w-none text-base text-primary/90"
+            >
+              <p>
+                Decentralized social media platforms are revolutionizing how we
+                interact online. Unlike traditional platforms controlled by
+                centralized entities, decentralized networks distribute control
+                among users, enhancing privacy, security, and freedom of
+                expression. These platforms often utilize blockchain technology
+                to ensure data integrity and user autonomy, fostering a more
+                democratic and transparent digital environment. As these
+                networks evolve, they promise to reshape the landscape of social
+                interaction, empowering individuals and communities in
+                unprecedented ways.
+              </p>
+            </div>
+          </article>
+          <div class="my-6 flex items-center justify-start gap-4 px-4">
+            <div class="flex items-center gap-2 text-secondary">
+              <span class="material-symbols-outlined">favorite_border</span>
+              <span class="text-sm font-semibold">234</span>
+            </div>
+            <div class="flex items-center gap-2 text-secondary">
+              <span class="material-symbols-outlined">chat_bubble_outline</span>
+              <span class="text-sm font-semibold">56</span>
+            </div>
+            <div class="flex items-center gap-2 text-secondary">
+              <span class="material-symbols-outlined">send</span>
+              <span class="text-sm font-semibold">12</span>
+            </div>
+          </div>
+          <aside
+            class="sticky bottom-0 z-10 w-full bg-background-color/80 p-4 backdrop-blur-sm"
+          >
+            <div
+              class="mx-auto flex max-w-md justify-around rounded-full bg-secondary-color p-2"
+            >
+              <button
+                class="flex flex-col items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-primary hover:bg-[var(--primary-color)] hover:text-background-color"
+              >
+                <span class="material-symbols-outlined">thumb_up</span>
+                <span>Support</span>
+              </button>
+              <button
+                class="flex flex-col items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-primary hover:bg-[var(--primary-color)] hover:text-background-color"
+              >
+                <span class="material-symbols-outlined">flag</span>
+                <span>Challenge</span>
+              </button>
+              <button
+                class="flex flex-col items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-primary hover:bg-[var(--primary-color)] hover:text-background-color"
+              >
+                <span class="material-symbols-outlined">paid</span>
+                <span>Tip Creator</span>
+              </button>
+              <button
+                class="flex flex-col items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-primary hover:bg-[var(--primary-color)] hover:text-background-color"
+              >
+                <span class="material-symbols-outlined">share</span>
+                <span>Share</span>
+              </button>
+            </div>
+          </aside>
+          <section class="mt-12 space-y-8 px-4">
+            <div>
+              <h3 class="text-xl font-bold tracking-tight">
+                Verification Panel
+              </h3>
+              <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div
+                  class="flex flex-col gap-2 rounded-xl border border-border-color bg-secondary-color/30 p-6"
+                >
+                  <p class="text-base font-medium text-secondary">
+                    Verification Status
+                  </p>
+                  <p class="text-3xl font-bold text-[var(--primary-color)]">
+                    Verified
+                  </p>
+                </div>
+                <div
+                  class="flex flex-col gap-2 rounded-xl border border-border-color bg-secondary-color/30 p-6"
+                >
+                  <p class="text-base font-medium text-secondary">
+                    Staked $HNY
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <span class="text-3xl font-bold">1500</span>
+                    <img
+                      alt="HNY Token"
+                      class="size-8"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOZdnVZY3jUc4rC1V97yFVFV7rXHk39jJTzI5MoESG1XM4OlNHLG9SfkfNVVEAclGjQeKNyZFb-r4JO1loOFtTtcmYB952-xZ5jISf8n_pjGNFSGRO71djD3HKecoL-yOYTdQh1BryJpjEXJlGi5-MmPU0oPksxLoT-suqgroHs9Jy6wCVdOf4h9eea_o1Q3KJH9TOiOFe-u_1t3Lpx7YglLy4MD31FMUF029sipAAASBG7CS0HNLN4dn92fLvJdviv-epkZnR1hs"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold tracking-tight">
+                Key Verifiers &amp; Challengers
+              </h3>
+              <div class="mt-4 flex -space-x-4">
+                <div
+                  class="relative size-14 rounded-full border-4 border-background-color bg-cover bg-center honeycomb"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBunbdzHQ7dP-uxpOB202pyminJJMkorcWW0efUHf2qNOUeP7W0-865UgpMQ-pOU4jP1W63N8nJU8HO9_M4qw3sN7CFe6GSD8hSMhg1VGrOBWEh8aKrrK2YNVWActiU0hky0Mt2YH-Z6Jeg6MlLcnKoqjmAw8EpwE_iy-W7DWhBxLaqFhNd5e2zj5WNkluoYJqUfmnUWcKFavansB295wjc6JiJjp64MZWUj-v21hUSqofv4yGAxJiBNGhdt8hpxVet6QuG-cGCLK8');
+                  "
+                ></div>
+                <div
+                  class="relative size-14 rounded-full border-4 border-background-color bg-cover bg-center honeycomb"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDevFUwI4SQnR5KOe4k0ozHLoYzu1H-UlyESMZPk7jc7WCXEs34uNbvyokLFmkHQRrUSBJULlO-YRAbNOZCqlDt5Skh0c3Gkh-e-Qy62NbbqX77NKpWwocOY877R84Edr4BqgaXQV8LcWRP5GdrJ4aFHWuTEeGv8bcfGSyDYlHIKvQTZu3GxRqer0C_XxMSDldTTXW2SVf36h0RBJShOZxCBhIxebdrVJH0eBQhmIhR5jo1rkOzh2qT09ilbxtk7c2tbhhrZ8C80yU');
+                  "
+                ></div>
+                <div
+                  class="relative size-14 rounded-full border-4 border-background-color bg-cover bg-center honeycomb"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA44earlgIdGBUdQfvwbbKa6dI3KX-6JEFA4z8EawhV4ElEt67EEVP93GdE_uDW1A6Srilql4WRtE22KEt0H0RJ2Eqmn_zWBHfiBB7i3zJFn6kLCpqFLRdMWxD8EEGTV41Y3_MOsN7Qdijlxe6nFrWwvi53Jx-s4M-1a0H8mn4XX4iqBTxWH2Cl7tuio11g4mLeZjSeYw-EmaqTwMamQcBn1LGO5F7Lko1Znff1tkMBp0AfkNUl2-PmgObwZKdTwXM4ImEUyTtLy7M');
+                  "
+                ></div>
+                <div
+                  class="relative size-14 rounded-full border-4 border-background-color bg-cover bg-center honeycomb"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7rk_vgNdzjn02WnyGWApu8-1b7qZpIj7Xy6zK6uq-iQ7osHSJcguUbIeVYpKC8rahNoAsdNd0ilWntCLFLFSAViNiQ21bUk3u130BjxxbH3H_Pff31yVznziaDm_UHmZj_Rx1_d2plW7KuVgYJmIM9sMDD5rTXMmZ-kwxrOULK98us5VrQxo8SqEFwaqcaDEGvjIrSIiQm_Gt1EsYO4wOW1lkRkBuYbVmrSdsZ9bWXnATw76kF0Pe5AnhADVQ8RIDpj3-PEc4KLI');
+                  "
+                ></div>
+                <div
+                  class="relative flex size-14 items-center justify-center rounded-full border-4 border-background-color bg-secondary-color honeycomb"
+                >
+                  <span class="text-lg font-bold">+5</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
