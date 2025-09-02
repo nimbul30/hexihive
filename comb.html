@@ -1,18 +1,22 @@
 <html>
   <head>
-    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      as="style"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700"
-      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap"
       rel="stylesheet"
     />
     <meta charset="utf-8" />
     <style type="text/tailwindcss">
       :root {
+        --amber-gold: #ffbf00;
+        --dark-charcoal: #1a1a1a;
         --amber-400: #fbbf24;
         --green-500: #22c55e;
         --red-500: #ef4444;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
       }
       .honeycomb {
         display: grid;
@@ -42,7 +46,7 @@
         left: 2px;
         right: 2px;
         bottom: 2px;
-        background-color: #1a1a1a;
+        background-color: var(--dark-charcoal);
         clip-path: polygon(
           50% 0%,
           100% 25%,
@@ -60,7 +64,7 @@
         background: var(--green-500);
       }
       .cell-pending {
-        background: var(--amber-400);
+        background: var(--amber-gold);
       }
       .cell-challenged {
         background: var(--red-500);
@@ -74,15 +78,12 @@
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
-  <body
-    class="bg-[#111111] text-white"
-    style="font-family: 'Spline Sans', 'Noto Sans', sans-serif"
-  >
+  <body class="bg-dark-charcoal text-white">
     <div class="flex min-h-screen flex-col">
       <header
-        class="sticky top-0 z-20 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#2a2a2a] bg-[#111111]/80 px-10 py-4 backdrop-blur-sm"
+        class="sticky top-0 z-20 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#2a2a2a] bg-dark-charcoal/80 px-10 py-4 backdrop-blur-sm"
       >
-        <div class="flex items-center gap-4">
+        <a href="comb.html" class="flex items-center gap-4">
           <svg
             fill="none"
             height="28"
@@ -100,12 +101,14 @@
             ></path>
           </svg>
           <h1 class="text-2xl font-bold tracking-tight text-white">HexiHive</h1>
-        </div>
+        </a>
         <nav class="hidden items-center gap-8 md:flex">
-          <a class="text-amber-400 text-sm font-semibold" href="#">Hives</a>
+          <a class="text-amber-400 text-sm font-semibold" href="news.html"
+            >Hives</a
+          >
           <a
             class="text-gray-300 hover:text-white transition-colors text-sm font-medium"
-            href="#"
+            href="news.html"
             >Explore</a
           >
           <a
@@ -151,12 +154,13 @@
               ></path>
             </svg>
           </button>
-          <div
+          <a href="userdash.html"
             class="size-10 rounded-full bg-cover bg-center"
             style="
               background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdGVpB80pEKD59sJZoC9EM21wbMbkeVL5rgM8Mt4NC7sId5e7Db5kQ88_48bSnVizYpJpF8UW0lZxwEaPHWwIvYtw5jmywAjjobokPMf3hztH58Jy2baidWRHEudeTMFgSrnCpclsW38geAky54IF-KCOJONazZxgfN9DEj3ItR7DlX9i6r8sVKaUNRK76xPBKERFafDfZfxegm8203TBsayIaK0y7Us-wQgNkrgTXODDSFz5lvCtKFb3eO84OjG03U6s4sCGEGaA');
             "
-          ></div>
+          ></a
+          >
         </div>
       </header>
       <main class="flex-1 px-4 py-8 sm:px-6 md:px-10">
@@ -165,7 +169,7 @@
             The Comb
           </h2>
           <div class="honeycomb">
-            <div class="cell cell-verified">
+            <a href="insidehexi.html" class="cell cell-verified">
               <div
                 class="cell-inner bg-cover bg-center"
                 style="

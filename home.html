@@ -84,24 +84,29 @@
           connect and share.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-          <button
+          <a
+            href="setup.html"
             class="flex items-center justify-center gap-2 w-full sm:w-auto h-12 px-6 bg-[var(--amber-gold)] text-[var(--dark-charcoal)] font-bold rounded-full text-lg hover:bg-amber-400 transition-colors duration-300"
           >
             <span class="material-symbols-outlined"
               >account_balance_wallet</span
             >
             Connect Wallet
-          </button>
-          <button
+          </a>
+          <a
+            href="news.html"
             class="flex items-center justify-center gap-2 w-full sm:w-auto h-12 px-6 border-2 border-[var(--amber-gold)] text-[var(--amber-gold)] font-bold rounded-full text-lg hover:bg-[var(--amber-gold)] hover:text-[var(--dark-charcoal)] transition-colors duration-300"
           >
             <span class="material-symbols-outlined">info</span>
             Learn More
-          </button>
+          </a>
         </div>
         <div class="mt-12 w-full max-w-md">
           <p class="mb-4 text-lg font-medium text-gray-200">Sign-up for Beta</p>
-          <form class="flex flex-col sm:flex-row gap-4">
+          <form
+            class="flex flex-col sm:flex-row gap-4"
+            action="homeapprove.html"
+          >
             <input
               class="form-input flex-grow w-full h-12 px-4 bg-gray-800 border-2 border-gray-700 rounded-full text-white placeholder-gray-500 focus:ring-[var(--amber-gold)] focus:border-[var(--amber-gold)]"
               placeholder="Enter your email"
