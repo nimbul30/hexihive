@@ -42,51 +42,6 @@
       .form-input::placeholder {
         color: #9ca3af;
       }
-      .animated-border {
-        position: relative;
-      }
-
-      .animated-border:before,
-      .animated-border:after {
-        content: '';
-        position: absolute;
-        left: -2px;
-        top: -2px;
-        background: linear-gradient(
-          45deg,
-          #fb0094,
-          #0000ff,
-          #00ff00,
-          #ffff00,
-          #ff0000,
-          #fb0094,
-          #0000ff,
-          #00ff00,
-          #ffff00,
-          #ff0000
-        );
-        background-size: 400%;
-        width: calc(100% + 4px);
-        height: calc(100% + 4px);
-        z-index: -1;
-        animation: steam 20s linear infinite;
-      }
-
-      @keyframes steam {
-        0% {
-          background-position: 0 0;
-        }
-        50% {
-          background-position: 400% 0;
-        }
-        100% {
-          background-position: 0 0;
-        }
-      }
-
-      .animated-border:after {
-        filter: blur(50px);
-      }
     </style>
   </head>
   <body class="bg-black text-white antialiased">
@@ -98,58 +53,60 @@
       ></div>
       <div class="home-honeycomb"></div>
       <div
-        class="relative z-10 flex flex-col items-center text-center p-8 max-w-2xl mx-auto animated-border"
+        class="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto animated-border"
       >
-        <div class="w-25 h-25 mb-8 bg-gray-400">
-          <img
-            src="assets/HexiHive.png"
-            alt="HexiHive Logo"
-            class="w-fill h-fill"
-          />
-        </div>
-        <p class="text-lg md:text-xl text-[var(--amber-gold)] max-w-lg mb-8">
-          A decentralized social platform where creators are rewarded for
-          quality and credibility. Join the hive and experience a new way to
-          connect and share.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-          <a
-            href="setup.html"
-            class="flex items-center justify-center gap-2 w-full sm:w-auto h-12 px-6 bg-[var(--amber-gold)] text-[var(--dark-charcoal)] font-bold rounded-full text-lg hover:bg-amber-400 transition-colors duration-300"
-          >
-            <span class="material-symbols-outlined"
-              >account_balance_wallet</span
-            >
-            Connect Wallet
-          </a>
-          <a
-            href="news.html"
-            class="flex items-center justify-center gap-2 w-full sm:w-auto h-12 px-6 border-2 border-[var(--amber-gold)] text-[var(--amber-gold)] font-bold rounded-full text-lg hover:bg-[var(--amber-gold)] hover:text-[var(--dark-charcoal)] transition-colors duration-300"
-          >
-            <span class="material-symbols-outlined">info</span>
-            Learn More
-          </a>
-        </div>
-        <div class="mt-12 w-full max-w-md">
-          <p class="mb-4 text-lg font-medium text-[var(--amber-gold)]">
-            Sign-up for Beta
-          </p>
-          <form
-            class="flex flex-col sm:flex-row gap-4"
-            action="homeapprove.html"
-          >
-            <input
-              class="form-input flex-grow w-full h-12 px-4 bg-gray-800 border-2 border-gray-700 rounded-full text-white placeholder-gray-500 focus:ring-[var(--amber-gold)] focus:border-[var(--amber-gold)]"
-              placeholder="Enter your email"
-              type="email"
+        <div class="p-8 content-box">
+          <div class="w-25 h-25 mb-8 bg-gray-400">
+            <img
+              src="assets/HexiHive.png"
+              alt="HexiHive Logo"
+              class="w-fill h-fill"
             />
-            <button
-              class="flex items-center justify-center w-full sm:w-auto h-12 px-8 bg-[var(--amber-gold)] text-[var(--dark-charcoal)] font-bold rounded-full text-lg hover:bg-amber-400 transition-colors duration-300"
-              type="submit"
+          </div>
+          <p class="text-lg md:text-xl text-[var(--amber-gold)] max-w-lg mb-8">
+            A decentralized social platform where creators are rewarded for
+            quality and credibility. Join the hive and experience a new way to
+            connect and share.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+            <a
+              href="setup.html"
+              class="flex items-center justify-center gap-2 w-full sm:w-auto h-12 px-6 bg-[var(--amber-gold)] text-[var(--dark-charcoal)] font-bold rounded-full text-lg hover:bg-amber-400 transition-colors duration-300"
             >
-              Submit
-            </button>
-          </form>
+              <span class="material-symbols-outlined"
+                >account_balance_wallet</span
+              >
+              Connect Wallet
+            </a>
+            <a
+              href="news.html"
+              class="flex items-center justify-center gap-2 w-full sm:w-auto h-12 px-6 border-2 border-[var(--amber-gold)] text-[var(--amber-gold)] font-bold rounded-full text-lg hover:bg-[var(--amber-gold)] hover:text-[var(--dark-charcoal)] transition-colors duration-300"
+            >
+              <span class="material-symbols-outlined">info</span>
+              Learn More
+            </a>
+          </div>
+          <div class="mt-12 w-full max-w-md">
+            <p class="mb-4 text-lg font-medium text-[var(--amber-gold)]">
+              Sign-up for Beta
+            </p>
+            <form
+              class="flex flex-col sm:flex-row gap-4"
+              action="homeapprove.html"
+            >
+              <input
+                class="form-input flex-grow w-full h-12 px-4 bg-gray-800 border-2 border-gray-700 rounded-full text-white placeholder-gray-500 focus:ring-[var(--amber-gold)] focus:border-[var(--amber-gold)]"
+                placeholder="Enter your email"
+                type="email"
+              />
+              <button
+                class="flex items-center justify-center w-full sm:w-auto h-12 px-8 bg-[var(--amber-gold)] text-[var(--dark-charcoal)] font-bold rounded-full text-lg hover:bg-amber-400 transition-colors duration-300"
+                type="submit"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
