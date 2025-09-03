@@ -13,7 +13,6 @@
     />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <title>HexiHive - Decentralized Social Platform</title>
-    <link href="assets/style.css" rel="stylesheet" />
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
     <style type="text/tailwindcss">
       :root {
@@ -42,6 +41,51 @@
       }
       .form-input::placeholder {
         color: #9ca3af;
+      }
+      .animated-border {
+        position: relative;
+      }
+
+      .animated-border:before,
+      .animated-border:after {
+        content: '';
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        background: linear-gradient(
+          45deg,
+          #fb0094,
+          #0000ff,
+          #00ff00,
+          #ffff00,
+          #ff0000,
+          #fb0094,
+          #0000ff,
+          #00ff00,
+          #ffff00,
+          #ff0000
+        );
+        background-size: 400%;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        z-index: -1;
+        animation: steam 20s linear infinite;
+      }
+
+      @keyframes steam {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+
+      .animated-border:after {
+        filter: blur(50px);
       }
     </style>
   </head>
