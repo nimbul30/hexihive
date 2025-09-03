@@ -19,9 +19,69 @@
         --amber-gold: #ffbf00;
         --dark-charcoal: #1a1a1a;
       }
+
       body {
         font-family: 'Inter', sans-serif;
       }
+
+      .hexagon {
+        height: 150px;
+        aspect-ratio: 1 / cos(30deg);
+        clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+        background: linear-gradient(60deg, #bf4d28, #cc333f);
+      }
+      .hexagon-alt {
+        height: 150px;
+        aspect-ratio: cos(30deg);
+        clip-path: polygon(-50% 50%, 50% 100%, 150% 50%, 50% 0);
+        background: linear-gradient(60deg, #bf4d28, #cc333f);
+      }
+      .hexagon-border {
+        --b: 10px; /* adjust to control the border  */
+        height: 150px;
+        aspect-ratio: 1 / cos(30deg);
+        clip-path: polygon(
+          0 50%,
+          50% -50%,
+          100% 50%,
+          50% 150%,
+          0 50%,
+          var(--b) 50%,
+          calc(25% + var(--b) * cos(60deg)) calc(100% - var(--b) * sin(60deg)),
+          calc(75% - var(--b) * cos(60deg)) calc(100% - var(--b) * sin(60deg)),
+          calc(100% - var(--b)) 50%,
+          calc(75% - var(--b) * cos(60deg)) calc(var(--b) * sin(60deg)),
+          calc(25% + var(--b) * cos(60deg)) calc(var(--b) * sin(60deg)),
+          var(--b) 50%
+        );
+        background: linear-gradient(60deg, #bf4d28, #cc333f);
+      }
+      .hexagon-border-alt {
+        --b: 10px; /* adjust to control the border  */
+        height: 150px;
+        aspect-ratio: cos(30deg);
+        clip-path: polygon(
+          50% 0,
+          -50% 50%,
+          50% 100%,
+          150% 50%,
+          50% 0,
+          50% var(--b),
+          calc(100% - var(--b) * sin(60deg)) calc(25% + var(--b) * cos(60deg)),
+          calc(100% - var(--b) * sin(60deg)) calc(75% - var(--b) * cos(60deg)),
+          50% calc(100% - var(--b)),
+          calc(var(--b) * sin(60deg)) calc(75% - var(--b) * cos(60deg)),
+          calc(var(--b) * sin(60deg)) calc(25% + var(--b) * cos(60deg)),
+          50% var(--b)
+        );
+        background: linear-gradient(60deg, #bf4d28, #cc333f);
+      }
+
+      body {
+        display: flex;
+        gap: 20px;
+      }
+
       .honeycomb {
         position: absolute;
         width: 100%;
@@ -42,6 +102,63 @@
       .form-input::placeholder {
         color: #9ca3af;
       }
+      .hexagon {
+        height: 150px;
+        aspect-ratio: 1 / cos(30deg);
+        clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+        background: linear-gradient(60deg, #bf4d28, #cc333f);
+      }
+      .hexagon-alt {
+        height: 150px;
+        aspect-ratio: cos(30deg);
+        clip-path: polygon(-50% 50%, 50% 100%, 150% 50%, 50% 0);
+        background: linear-gradient(60deg, #bf4d28, #cc333f);
+      }
+      .hexagon-border {
+        --b: 10px; /* adjust to control the border  */
+        height: 150px;
+        aspect-ratio: 1 / cos(30deg);
+        clip-path: polygon(
+          0 50%,
+          50% -50%,
+          100% 50%,
+          50% 150%,
+          0 50%,
+          var(--b) 50%,
+          calc(25% + var(--b) * cos(60deg)) calc(100% - var(--b) * sin(60deg)),
+          calc(75% - var(--b) * cos(60deg)) calc(100% - var(--b) * sin(60deg)),
+          calc(100% - var(--b)) 50%,
+          calc(75% - var(--b) * cos(60deg)) calc(var(--b) * sin(60deg)),
+          calc(25% + var(--b) * cos(60deg)) calc(var(--b) * sin(60deg)),
+          var(--b) 50%
+        );
+        background: linear-gradient(60deg, #bf4d28, #cc333f);
+      }
+      .hexagon-border-alt {
+        --b: 10px; /* adjust to control the border  */
+        height: 150px;
+        aspect-ratio: cos(30deg);
+        clip-path: polygon(
+          50% 0,
+          -50% 50%,
+          50% 100%,
+          150% 50%,
+          50% 0,
+          50% var(--b),
+          calc(100% - var(--b) * sin(60deg)) calc(25% + var(--b) * cos(60deg)),
+          calc(100% - var(--b) * sin(60deg)) calc(75% - var(--b) * cos(60deg)),
+          50% calc(100% - var(--b)),
+          calc(var(--b) * sin(60deg)) calc(75% - var(--b) * cos(60deg)),
+          calc(var(--b) * sin(60deg)) calc(25% + var(--b) * cos(60deg)),
+          50% var(--b)
+        );
+        background: linear-gradient(60deg, #bf4d28, #cc333f);
+      }
+
+      body {
+        display: flex;
+        gap: 20px;
+      }
     </style>
   </head>
   <body class="bg-[var(--dark-charcoal)] text-white antialiased">
@@ -52,13 +169,14 @@
       <div
         class="relative z-10 flex flex-col items-center text-center p-8 max-w-2xl mx-auto"
       >
-        <div class="w-24 h-24 mb-8">
-          <img src="assets/HexiHive.png" alt="HexiHive Logo" class="w-full h-full">
+        <div class="w-25 h-25 mb-8 bg-gray-400">
+          <img
+            src="assets/HexiHive.png"
+            alt="HexiHive Logo"
+            class="w-fill h-fill"
+          />
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-          Welcome to <span class="text-[var(--amber-gold)]">HexiHive</span>
-        </h1>
-        <p class="text-lg md:text-xl text-gray-300 max-w-lg mb-8">
+        <p class="text-lg md:text-xl text-[var(--amber-gold)] max-w-lg mb-8">
           A decentralized social platform where creators are rewarded for
           quality and credibility. Join the hive and experience a new way to
           connect and share.
@@ -82,7 +200,9 @@
           </a>
         </div>
         <div class="mt-12 w-full max-w-md">
-          <p class="mb-4 text-lg font-medium text-gray-200">Sign-up for Beta</p>
+          <p class="mb-4 text-lg font-medium text-[var(--amber-gold)]">
+            Sign-up for Beta
+          </p>
           <form
             class="flex flex-col sm:flex-row gap-4"
             action="homeapprove.html"
