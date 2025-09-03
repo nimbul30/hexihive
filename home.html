@@ -14,35 +14,7 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <title>HexiHive - Decentralized Social Platform</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
-    <style type="text/tailwindcss">
-      :root {
-        --amber-gold: #ffbf00;
-        --dark-charcoal: #1a1a1a;
-      }
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      .honeycomb {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-image: radial-gradient(
-            circle at 60% 80%,
-            rgba(255, 191, 0, 0.1) 0%,
-            transparent 40%
-          ),
-          radial-gradient(
-            circle at 20% 30%,
-            rgba(255, 191, 0, 0.1) 0%,
-            transparent 40%
-          );
-      }
-      .form-input::placeholder {
-        color: #9ca3af;
-      }
-    </style>
+    <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body class="bg-black text-white antialiased">
     <div
@@ -53,60 +25,58 @@
       ></div>
       <div class="home-honeycomb"></div>
       <div
-        class="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto animated-border"
+        class="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto bg-[var(--dark-charcoal)] p-8"
       >
-        <div class="p-8 content-box">
-          <div class="w-25 h-25 mb-8 bg-gray-400">
-            <img
-              src="assets/HexiHive.png"
-              alt="HexiHive Logo"
-              class="w-fill h-fill"
-            />
-          </div>
-          <p class="text-lg md:text-xl text-[var(--amber-gold)] max-w-lg mb-8">
-            A decentralized social platform where creators are rewarded for
-            quality and credibility. Join the hive and experience a new way to
-            connect and share.
+        <div class="w-25 h-25 mb-8 bg-gray-400 block">
+          <img
+            src="assets/HexiHive.png"
+            alt="HexiHive Logo"
+            class="w-fill h-fill"
+          />
+        </div>
+        <p class="text-lg md:text-xl text-[var(--amber-gold)] max-w-lg mb-8">
+          A decentralized social platform where creators are rewarded for
+          quality and credibility. Join the hive and experience a new way to
+          connect and share.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+          <a
+            href="setup.html"
+            class="flex items-center justify-center gap-2 w-full sm:w-auto h-12 px-6 bg-[var(--amber-gold)] text-[var(--dark-charcoal)] font-bold rounded-full text-lg hover:bg-amber-400 transition-colors duration-300"
+          >
+            <span class="material-symbols-outlined"
+              >account_balance_wallet</span
+            >
+            Connect Wallet
+          </a>
+          <a
+            href="news.html"
+            class="flex items-center justify-center gap-2 w-full sm:w-auto h-12 px-6 border-2 border-[var(--amber-gold)] text-[var(--amber-gold)] font-bold rounded-full text-lg hover:bg-[var(--amber-gold)] hover:text-[var(--dark-charcoal)] transition-colors duration-300"
+          >
+            <span class="material-symbols-outlined">info</span>
+            Learn More
+          </a>
+        </div>
+        <div class="mt-12 w-full max-w-md">
+          <p class="mb-4 text-lg font-medium text-[var(--amber-gold)]">
+            Sign-up for Beta
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-            <a
-              href="setup.html"
-              class="flex items-center justify-center gap-2 w-full sm:w-auto h-12 px-6 bg-[var(--amber-gold)] text-[var(--dark-charcoal)] font-bold rounded-full text-lg hover:bg-amber-400 transition-colors duration-300"
+          <form
+            class="flex flex-col sm:flex-row gap-4"
+            action="homeapprove.html"
+          >
+            <input
+              class="form-input flex-grow w-full h-12 px-4 bg-gray-800 border-2 border-gray-700 rounded-full text-white placeholder-gray-500 focus:ring-[var(--amber-gold)] focus:border-[var(--amber-gold)]"
+              placeholder="Enter your email"
+              type="email"
+            />
+            <button
+              class="flex items-center justify-center w-full sm:w-auto h-12 px-8 bg-[var(--amber-gold)] text-[var(--dark-charcoal)] font-bold rounded-full text-lg hover:bg-amber-400 transition-colors duration-300"
+              type="submit"
             >
-              <span class="material-symbols-outlined"
-                >account_balance_wallet</span
-              >
-              Connect Wallet
-            </a>
-            <a
-              href="news.html"
-              class="flex items-center justify-center gap-2 w-full sm:w-auto h-12 px-6 border-2 border-[var(--amber-gold)] text-[var(--amber-gold)] font-bold rounded-full text-lg hover:bg-[var(--amber-gold)] hover:text-[var(--dark-charcoal)] transition-colors duration-300"
-            >
-              <span class="material-symbols-outlined">info</span>
-              Learn More
-            </a>
-          </div>
-          <div class="mt-12 w-full max-w-md">
-            <p class="mb-4 text-lg font-medium text-[var(--amber-gold)]">
-              Sign-up for Beta
-            </p>
-            <form
-              class="flex flex-col sm:flex-row gap-4"
-              action="homeapprove.html"
-            >
-              <input
-                class="form-input flex-grow w-full h-12 px-4 bg-gray-800 border-2 border-gray-700 rounded-full text-white placeholder-gray-500 focus:ring-[var(--amber-gold)] focus:border-[var(--amber-gold)]"
-                placeholder="Enter your email"
-                type="email"
-              />
-              <button
-                class="flex items-center justify-center w-full sm:w-auto h-12 px-8 bg-[var(--amber-gold)] text-[var(--dark-charcoal)] font-bold rounded-full text-lg hover:bg-amber-400 transition-colors duration-300"
-                type="submit"
-              >
-                Submit
-              </button>
-            </form>
-          </div>
+              Submit
+            </button>
+          </form>
         </div>
       </div>
     </div>
